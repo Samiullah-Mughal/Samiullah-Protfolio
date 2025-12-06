@@ -716,12 +716,12 @@ nav .SM {
         position: fixed;
         top: 64px;
         right: -100%;
-        width: 100%;
-        height: calc(100vh - 64px);
+        width: 150px;
+        height: calc(100% - 64px);
         background-color: #1F2428;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
         padding-top: 50px;
         gap: 40px;
         margin-right: 0;
@@ -731,6 +731,7 @@ nav .SM {
 
     nav ul.active {
         right: 0;
+
     }
 
     nav ul li a {
