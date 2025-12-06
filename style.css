@@ -717,7 +717,7 @@ nav .SM {
         top: 64px;
         right: -100%;
         width: 150px;
-        height: calc(100% - 64px);
+        height: 100%;
         background-color: #1F2428;
         flex-direction: column;
         justify-content: flex-start;
