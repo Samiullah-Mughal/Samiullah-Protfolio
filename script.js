@@ -30,7 +30,7 @@ const obs = new IntersectionObserver((entries) => {
             const bar = entry.target;
             bar.style.width = bar.dataset.width + "%";
         } else {
-            entry.target.style.width = "0";
+            entry.target.style.width = "10%";
         }
     });
 }, { threshold: 0.5 });
