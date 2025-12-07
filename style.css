@@ -405,11 +405,6 @@ nav .SM {
     flex-direction: column;
 }
 
-@media screen and (max-width: 768px) {
-    .skills {
-        height: auto;
-    }
-}
 
 .skills .text {
     display: flex;
@@ -471,7 +466,7 @@ nav .SM {
     justify-content: flex-end;
     padding-right: 4px;
     border-radius: 25px;
-    width: 0;
+    width: 10%;
     transition: width 2s ease;
 }
 
@@ -717,7 +712,7 @@ nav .SM {
         top: 64px;
         right: -100%;
         width: 150px;
-        height: 100%;
+        height: calc(100% - 64px);
         background-color: #1F2428;
         flex-direction: column;
         justify-content: flex-start;
@@ -893,6 +888,10 @@ nav .SM {
 
     .progress-bar {
         width: 100%;
+        box-shadow: #0080FF 0px 0px 10px;
+    }
+    .progress-fill {
+        width: 15%;
     }
 
     /* Contact Section */
