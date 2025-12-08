@@ -116,6 +116,11 @@ nav .SM {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0;
+    padding: 0;
+    margin-left: 150px;
+    gap: 30px;
+    font-size: 25px;
 }
 
 .home .right {
@@ -201,15 +206,7 @@ nav .SM {
 }
 
 .home .left {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    margin-left: 150px;
-    gap: 30px;
-    font-size: 25px;
+    
 }
 
 .home .left p {
