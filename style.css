@@ -107,6 +107,16 @@ nav .SM {
     height: 100vh;
     position: relative;
 }
+.home .left {
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    left: 0;
+    bottom:  40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .home .right {
     position: absolute;
@@ -629,7 +639,7 @@ nav .SM {
 }
 
 /* Large Tablets and Small Laptops (1024px and below) */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1083px) {
     nav .SM {
         margin-left: 50px;
         font-size: 40px;
