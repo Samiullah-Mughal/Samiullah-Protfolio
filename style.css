@@ -450,6 +450,11 @@ nav .SM {
     /* align-items: center; */
     gap: 50px;
 }
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 .progress-bar {
     height: 30px;
