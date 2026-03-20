@@ -427,7 +427,6 @@ nav .SM {
 }
 
 .skills .container {
-    margin-top: 50px;
     width: 100%;
     height: 70%;
     border-radius: 20px;
@@ -438,7 +437,7 @@ nav .SM {
     flex-direction: row;
     gap: 50px;
     flex-wrap: wrap;
-    margin-top: auto;
+    margin: auto;
 }
 
 .skills .container .skill-category {
