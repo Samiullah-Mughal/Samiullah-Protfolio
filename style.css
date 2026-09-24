@@ -146,7 +146,7 @@
 :root {
     --primary-gradient: linear-gradient(135deg, hsl(190, 95%, 55%), hsl(220, 90%, 60%));
     --primary-color: #1fd5f9;
-    --octa-color: #0b282f;              /* Change this to update octa & ring colors */
+    --octa-color: #0b282f;              /*  octa & ring colors */
     --primary-color-2: #0b282f;
     --primary-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25), 0px 0px 10px rgba(31, 213, 249, 0.6), 0px 0px 40px rgba(31, 213, 249, 0.3);
     --primary-shadow-large: 0px 8px 24px rgba(0, 0, 0, 0.3), 0px 4px 12px rgba(0, 0, 0, 0.2), 0px 0px 30px rgba(31, 213, 249, 0.8), 0px 0px 60px rgba(31, 213, 249, 0.4);
@@ -174,7 +174,7 @@
 
 }
 h1{
-    color: rgb(247, 248, 200);
+    color: white;
 }
 html {
     scroll-behavior: smooth;
@@ -479,8 +479,8 @@ nav ul li a.active {
     font-weight: 300;
     font-size: 25px;
     padding: 5px 10px;
-    border: 2px solid #000000;
-    background-color: #000000;
+    border: 2px solid #00111b;
+    background-color: #00111b;
     border-radius: var(--border-radius);
     width: max-content;
     transition: var(--transition-speed);
@@ -489,12 +489,8 @@ nav ul li a.active {
 
 }
 
-.about .right .container a:hover {
-    border: 2px solid var(--primary-color);
-    background-color: var(--primary-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--primary-shadow);
-    width: max-content;
+.about .right .container a:active {
+    display: block;
 }
 
 .about .right .container p {
@@ -1066,12 +1062,16 @@ body.menu-open {
 
     /* Home Section */
     .home {
-        height: 100vh;
+        /* height: 100vh; */
         min-height: 100vh;
         padding-top: 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
 
     .home .left {
+        position: relative;
         width: 100%;
         margin-left: 0;
         padding: 40px 30px;
@@ -1099,66 +1099,16 @@ body.menu-open {
 
     /* Hide octagon on tablets and mobile */
     .home .right {
-        display: none;
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 20px;
+        margin-left: -10px;
+        margin-bottom: -200px;
     }
 
     /* About Section */
-    .about {
-        height: auto;
-        min-height: 80vh;
-        padding: 60px 0;
-    }
-
-    /* Hide ring on tablets and mobile */
-    .about .left {
-        display: none;
-    }
-
-    .about .right {
-        position: relative;
-        width: 100%;
-        padding: 40px 30px;
-        top: 0;
-    }
-
-    .about .right .abouttext {
-        justify-content: center;
-        position: relative;
-        font-size: 28px;
-        bottom: 25%;
-        margin-bottom: 30%;
-    }
-
-    .about .right .container {
-        font-size: 0px;
-        gap: 20px;
-        align-items: center;
-        text-align: center;
-        position: relative;
-    }
-
-    .about .right .container div {
-        font-size: 35px;
-    }
-
-    .about .right .container p {
-        max-width: 100%;
-    }
-
-    .about .right .container .p1 {
-        margin-top: 10%;
-    }
-
-    .about .right .container .p2 {
-        margin-bottom: 10%;
-    }
-
-    .about .right .container a {
-        font-size: 30px;
-        top: 30%;
-        position: relative;
-    }
-
+    
     /* Services Section */
     .services {
         height: auto;
@@ -1250,6 +1200,33 @@ body.menu-open {
 
 
 }
+/* only about for 718 screen */
+@media screen and (max-width: 718px) {
+    .about{
+        flex-direction: row-reverse;
+    }
+    
+    
+    .about .right{
+        position: relative;
+        left: 5%;
+    }
+    .about .left{
+        position: absolute;
+        display: flex;
+    }
+    .about .left .ring{
+        position: absolute;
+        left: 120%;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 250px;
+        width: 250px;
+    }
+
+}
 
 /* Mobile Devices (480px and below) */
 @media screen and (max-width: 480px) {
@@ -1292,7 +1269,6 @@ body.menu-open {
         gap: 0px;
         flex-direction: column;
         justify-content: space-between;
-
 
     }
     .home .left {
@@ -1355,7 +1331,9 @@ body.menu-open {
         align-items: center;
         justify-content: center;
         margin: -20px;
+        margin-top: 0;
         margin-bottom: -80px;
+        top: 50px;
     }
     .home .right .otext{
         font-size: 60px;
@@ -1365,15 +1343,47 @@ body.menu-open {
     .about {
         min-height: 70vh;
         padding: 40px 0;
+        display: flex;
+    }
+     .about .left {
+        display: flex;
+        position: absolute;
+    }
+    .about .left .ring {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3)) drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2)) drop-shadow(0px 0px 10px rgba(31, 213, 249, 0.8)) drop-shadow(0px 0px 30px rgba(31, 213, 249, 0.4));
+        left: 80%;
+        top: 100px;
+
+
     }
 
     .about .right {
-        padding: 30px 20px;
+        position: relative;
+        width: 100%;
+        padding: 40px 30px;
+        top: 0;
+        align-items: flex-start;
+        left: 0;
     }
+
+    .about .right .abouttext {
+        justify-content: center;
+        position: relative;
+        top: 20%;
+        font-size: 25px;
+        bottom: 25%;
+        margin-bottom: 90%;
+    }
+
 
     .about .right .container {
         font-size: 18px;
         gap: 18px;
+        text-align: left;
+        width: 100%;
     }
 
     .about .right .container p {
@@ -1585,4 +1595,4 @@ body.menu-open {
 }
 
 
-
+ 
