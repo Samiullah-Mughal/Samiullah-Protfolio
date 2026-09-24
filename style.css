@@ -1291,6 +1291,8 @@ body.menu-open {
         align-items: center;
         gap: 0px;
         flex-direction: column;
+        justify-content: space-between;
+
 
     }
     .home .left {
