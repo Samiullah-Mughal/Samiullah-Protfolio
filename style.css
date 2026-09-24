@@ -1388,6 +1388,8 @@ body.menu-open {
 
     .about .right .container p {
         font-size: 14px;
+        max-width: 300px;
+
     }
 
     .about .right .container a {
