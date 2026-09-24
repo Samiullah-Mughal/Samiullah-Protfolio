@@ -275,6 +275,7 @@ nav ul li a.active {
 .home {
     height: 100vh;
     position: relative;
+    min-height: 100vh;
 }
 .home .left {
     position: absolute;
@@ -345,15 +346,6 @@ nav ul li a.active {
     align-items: center;
 }
 
-.home .left .social span {
-    padding: 10px;
-    border: 2px solid transparent;
-    border-radius: var(--border-radius-circle);
-    object-fit: cover;
-    transition: transform 260ms cubic-bezier(.2, .9, .2, 1), box-shadow 260ms cubic-bezier(.2, .9, .2, 1), border-color 260ms cubic-bezier(.2, .9, .2, 1), padding 260ms cubic-bezier(.2, .9, .2, 1);
-    will-change: transform, box-shadow, border-radius;
-    overflow: hidden;
-}
 
 .left .typing {
     font-size: 30px;
@@ -372,7 +364,9 @@ nav ul li a.active {
 
 
 .octa {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* To change octa color: Replace both color codes below with your hex (without #) */
     /* Example: If you want #FF0000, replace 1fd5f9 with ff0000 (twice) */
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><polygon points='12,2 28,2 38,12 38,28 28,38 12,38 2,28 2,12' fill='%230b282f' stroke='%230a1f24' stroke-width='4' stroke-linejoin='round' stroke-linecap='round'/></svg>");
@@ -408,9 +402,10 @@ nav ul li a.active {
 
 }
 
-
+/* about section */
 .about {
     height: 100vh;
+    min-height: 100vh;
     position: relative;
     background-color: var(--bg-accent);
 }
@@ -1102,10 +1097,6 @@ body.menu-open {
         font-size: 16px;
     }
 
-    .home .left .social {
-        justify-content: center;
-    }
-
     /* Hide octagon on tablets and mobile */
     .home .right {
         display: none;
@@ -1265,6 +1256,7 @@ body.menu-open {
 
     /* Navigation */
     nav .SM {
+        margin-top: 10px;
         margin-left: 15px;
         font-size: 26px;
         bottom: 0;
@@ -1292,10 +1284,25 @@ body.menu-open {
     }
 
     /* Home Section */
+    .home{
+        height: auto;
+        max-height: auto;
+        display: flex;
+        align-items: center;
+        gap: 0px;
+        flex-direction: column;
+
+    }
     .home .left {
         padding: 30px 20px;
         gap: 18px;
         font-size: 16px;
+        height: auto;
+        justify-content: flex-start;
+        position: relative;
+        margin:0;
+        
+
     }
 
     .home .left h1 {
@@ -1319,10 +1326,6 @@ body.menu-open {
         font-size: 15px;
     }
 
-    .cv {
-        font-size: 20px;
-        padding: 8px 15px;
-    }
 
     .home .left .social span {
         padding: 8px;
@@ -1332,7 +1335,30 @@ body.menu-open {
         height: 30px;
         width: 35px;
     }
-
+    .home .left .links .whatsapp , .home .left .links .github {
+        padding: 8px 16px;
+    }
+    .home .right {
+        position: relative;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        height: auto;
+   
+    }
+    .home .right .octa{
+        position: relative;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: -20px;
+        margin-bottom: -80px;
+    }
+    .home .right .otext{
+        font-size: 60px;
+        position: relative;
+    }
     /* About Section */
     .about {
         min-height: 70vh;
@@ -1544,7 +1570,7 @@ body.menu-open {
     .skills,
     .contact {
         height: auto;
-        min-height: 794px;
+        /* min-height: 794px; */
     }
 
     .home .left {
