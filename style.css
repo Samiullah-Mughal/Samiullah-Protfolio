@@ -144,18 +144,20 @@
 }
 
 :root {
-    --bg-nav:rgba(0, 0, 0, 0.298);
+    --bg-nav:rgba(0, 0, 0, 0.113);
     --animate-backface: hidden;
-    --primary-gradient: linear-gradient(to right, #2c5364, #304e57);
-    --primary-color: #415a77;
-    --octa-color: #778da9;              /*  octa & ring colors */
-    --primary-color-2: #778da9;
+    --primary-gradient: linear-gradient(to right, #fdcf58, #ff0000);
+    --primary-color: #405A4B;
+    --primary-color-3: #BAC7AC;
+    --gr-replace: #243936;
+    --octa-color: #14213d;              /*  octa & ring colors */
+    --primary-color-2: #faedcd;
     --primary-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25), 0px 0px 10px rgba(31, 213, 249, 0.6), 0px 0px 40px rgba(31, 213, 249, 0.3);
     --primary-shadow-large: 0px 8px 24px rgba(0, 0, 0, 0.3), 0px 4px 12px rgba(0, 0, 0, 0.2), 0px 0px 30px rgba(31, 213, 249, 0.8), 0px 0px 60px rgba(31, 213, 249, 0.4);
-    --bg-dark: #0d1b2a;
-    --bg-darker: #1b263b;
-    --bg-accent: #0d1b2a;
-    --bg-input: #183446;
+    --bg-dark: #ccd5ae;
+    --bg-darker: #e9edc9;
+    --bg-accent: var(--bg-dark);
+    --bg-input: #fefae0;
     --transition-speed: 0.3s;
     --transition-timing: cubic-bezier(.2, .9, .2, 1);
     --border-radius: 10px;
@@ -172,7 +174,7 @@
     font-optical-sizing: auto;
 
     font-style: normal;
-    color: #6c7c93;
+    color: #3D4C4D;
 
 }
 h1{
@@ -296,17 +298,17 @@ nav ul li a.active {
 }
 .home .left h1 {
 
-    background: var(--primary-gradient);
+    background: var(--gr-replace);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     
 }
 .home .left h2{
-    background-color: #0a1418;
+    background-color: var(--primary-color-3);
     width: fit-content;
     padding: 14px;
-    border: 1px solid #104e5c;
+    /* border: 1px solid #104e5c; */
     border-radius: 24px;
     border-bottom-right-radius: 0;
 }
@@ -316,8 +318,10 @@ nav ul li a.active {
     flex-wrap: wrap;
 }
 .home .left .links .whatsapp , .home .left .links .github {
-    background-color: #0a1418;
-    border: 1px solid #104e5c;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+            background-color: #354f5200;
+
     padding: 10px 20px;
     border-radius: var(--border-radius);
     width: fit-content;
@@ -327,9 +331,10 @@ nav ul li a.active {
     gap: 5px;
 }
 .home .left .links .whatsapp:hover , .home .left .links .github:hover {
-    background-color: #1fd5f91f;
-    /* border: 1px solid var(--primary-color); */
-    border-radius: var(--border-radius);
+    background-color: var(--primary-color-3);
+
+
+    border: none;
     width: fit-content;
     scale: 105%;
 }
@@ -354,7 +359,7 @@ nav ul li a.active {
     font-family: "Sen", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
-    background: var(--primary-gradient);
+    background: var(--gr-replace);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -366,12 +371,13 @@ nav ul li a.active {
 
 
 .octa {
+    --octa-fill: var(--primary-color);
+    --octa-stroke: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    /* To change octa color: Replace both color codes below with your hex (without #) */
-    /* Example: If you want #FF0000, replace 1fd5f9 with ff0000 (twice) */
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><polygon points='12,2 28,2 38,12 38,28 28,38 12,38 2,28 2,12' fill='%230b282f' stroke='%230a1f24' stroke-width='4' stroke-linejoin='round' stroke-linecap='round'/></svg>");
+    /* To change octa color, edit the --octa-fill and --octa-stroke variables above */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpolygon points='12,2 28,2 38,12 38,28 28,38 12,38 2,28 2,12' fill='var(--octa-fill)' stroke='var(--octa-stroke)' stroke-width='4' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -648,17 +654,13 @@ nav ul li a.active {
     flex-direction: column;
     gap: 10px;
 }
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+
 .progress-bar {
     height: 30px;
     background: var(--bg-input);
     border: 2px solid;
     border-color: var(--bg-input);
-    box-shadow: var(--primary-shadow);
+    /* box-shadow: var(--primary-shadow); */
     position: relative;
     border-radius: 25px;
     width: 500px;
@@ -1163,7 +1165,7 @@ body.menu-open {
 
     .progress-bar {
         width: 100%;
-        box-shadow: var(--primary-shadow);
+        /* box-shadow: var(--primary-shadow); */
     }
     .progress-fill {
         width: 15%;
