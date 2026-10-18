@@ -808,7 +808,7 @@ nav ul li a.active {
 
     border-radius: var(--border-radius);
     padding: 10px;
-    color: white;
+    color: black;
     font-size: 25px;
     width: 400px;
     height: 79px;
@@ -888,8 +888,8 @@ nav ul li a.active {
 }
 
 .hamburger:hover {
-    background-color: rgba(31, 213, 249, 0.1);
-    box-shadow: 0 0 15px rgba(31, 213, 249, 0.3), inset 0 0 15px rgba(31, 213, 249, 0.1);
+    background-color: color-mix(in srgb, var(--secondary-color) 12%, transparent);
+    box-shadow: 0 0 15px color-mix(in srgb, var(--secondary-color) 28%, transparent), inset 0 0 15px color-mix(in srgb, var(--secondary-color) 10%, transparent);
 }
 
 .hamburger div {
@@ -899,16 +899,16 @@ nav ul li a.active {
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform-origin: center;
     border-radius: 2px;
-    box-shadow: 0 0 8px rgba(31, 213, 249, 0.4);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--primary-color) 40%, transparent);
 }
 
 .hamburger.active {
-    background-color: rgba(31, 213, 249, 0.15);
-    box-shadow: 0 0 25px rgba(31, 213, 249, 0.5), inset 0 0 20px rgba(31, 213, 249, 0.2);
+    background-color: color-mix(in srgb, var(--secondary-color) 18%, transparent);
+    box-shadow: 0 0 25px color-mix(in srgb, var(--secondary-color) 42%, transparent), inset 0 0 20px color-mix(in srgb, var(--secondary-color) 14%, transparent);
 }
 
 .hamburger.active div {
-    box-shadow: 0 0 12px rgba(31, 213, 249, 0.6);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--secondary-color) 55%, transparent);
 }
 
 .hamburger.active div:nth-child(1) {
@@ -932,7 +932,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: var(--bg-darker);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -941,7 +941,7 @@ body::before {
 }
 
 body.menu-open::before {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--bg-darker);
     opacity: 1;
     visibility: visible;
     pointer-events: none;
@@ -1682,10 +1682,10 @@ body.menu-open {
 
 .about .left .ring {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' stroke='%23bac7ac' stroke-width='30' fill='none'/></svg>");
-    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.3))
-        drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.2))
-        drop-shadow(0px 0px 30px rgba(186, 199, 172, 0.55))
-        drop-shadow(0px 0px 60px rgba(186, 199, 172, 0.3));
+    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.3))
+        drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.2))
+        drop-shadow(0px 0px 0px rgba(186, 199, 172, 0.55))
+        drop-shadow(0px 0px 0px rgba(186, 199, 172, 0.3));
 }
 
 .octa {
@@ -1698,7 +1698,7 @@ body.menu-open {
 .services .text .servicestext,
 .skills .text .skillstext,
 .contact .text .contacttext {
-    background: linear-gradient(to right, #bac7ac, #405a4b);
+    background: var(--gr-replace);
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -1751,5 +1751,82 @@ body.menu-open {
     nav ul li a:hover,
     nav ul li a.active {
         background-color: rgba(186, 199, 172, 0.12);
+    }
+}
+
+/* HAMBURGER BUTTON */
+.hamburger {
+    background: rgba(36, 57, 54, 0.08);
+    border: 1px solid rgba(36, 57, 54, 0.18);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+
+.hamburger div {
+    background: #243936;
+    box-shadow: none;
+    border-radius: 3px;
+}
+
+.hamburger:hover,
+.hamburger.active {
+    background: #243936;
+    border-color: #243936;
+    box-shadow: 0 6px 18px rgba(36, 57, 54, 0.2);
+}
+
+.hamburger:hover div,
+.hamburger.active div {
+    background: #E9EDC9;
+    box-shadow: none;
+}
+
+/* MOBILE MENU PANEL */
+@media screen and (max-width: 768px) {
+    nav ul {
+        background: linear-gradient(
+            155deg,
+            #243936 0%,
+            #182824 100%
+        );
+        border-left: 1px solid rgba(198, 169, 107, 0.35);
+        box-shadow: -12px 0 35px rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 0 20px;
+    }
+
+    nav ul li {
+        border-bottom: 1px solid rgba(233, 237, 201, 0.09);
+    }
+
+    nav ul li a {
+        color: #E9EDC9;
+        transition: all 0.25s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+        color: #C6A96B;
+        background: rgba(186, 199, 172, 0.12);
+    }
+
+    nav ul li a::before {
+        background: #C6A96B;
+    }
+
+    nav {
+        border-bottom-color: rgba(36, 57, 54, 0.15);
+    }
+
+    body::before,
+    body.menu-open::before {
+        background: rgba(18, 30, 27, 0.35);
+        backdrop-filter: blur(4px);
+    }
+}
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 240px;
+        max-width: 78vw;
+        box-sizing: border-box;
     }
 }
