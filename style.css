@@ -402,7 +402,7 @@ nav ul li a.active {
 
 .octagon-border {
   --size: 400px;
-  --border: 15px;
+  --border: 20px;
   --cut: 29.289%; /* regular octagon: 1 - 1/√2 */
 
   width: var(--size);
