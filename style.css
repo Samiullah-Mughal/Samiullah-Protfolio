@@ -952,6 +952,16 @@ body.menu-open {
 }
 
 /* Large Tablets and Small Laptops (1024px and below) */
+
+@media screen and (max-width: 1260px){
+    .home .right .octagon-border {
+        --size: 270px;
+        --border: 15px;
+    }
+}
+
+
+
 @media screen and (max-width: 1083px) {
     nav .SM {
         margin-left: 50px;
@@ -1392,6 +1402,7 @@ body.menu-open {
     .home .right .octagon-border {
         position: relative;
         height: 200px;
+        width: 200px;
         display: flex;
         align-items: center;
         justify-content: center;
